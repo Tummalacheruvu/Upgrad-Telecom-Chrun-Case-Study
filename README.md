@@ -4,37 +4,37 @@
 
 ## Business Problem Overview
 
-In the telecom industry, customers are able to choose from multiple service providers and actively switch from one operator to another. In this highly competitive market, the telecommunications industry experiences an average of 15-25% annual churn rate. Given the fact that it costs 5-10 times more to acquire a new customer than to retain an existing one, customer retention has now become even more important than customer acquisition.
+In the telecom sector, consumers have the freedom to select from various service providers and can easily switch between them. This highly competitive environment results in an average annual churn rate of 15-25%. Considering that acquiring a new customer is 5-10 times more expensive than retaining an existing one, maintaining customer loyalty has become more crucial than the process of attracting new customers.
 
-For many incumbent operators, retaining high profitable customers is the number one business goal.
+For many established operators, keeping their most profitable customers is the top priority.
 
 To reduce customer churn, telecom companies need to predict which customers are at high risk of churn.
 
-In this project, we will analyse customer-level data of a leading telecom firm, build predictive models to identify customers at high risk of churn and identify the main indicators of churn.
+In this project, we will examine customer-level data from a leading telecom company, develop predictive models to pinpoint customers with a high likelihood of churn, and identify the key factors contributing to churn.
 
 ## Understanding and Defining Churn
 
-There are two main models of payment in the telecom industry - postpaid (customers pay a monthly/annual bill after using the services) and prepaid (customers pay/recharge with a certain amount in advance and then use the services).
+The telecom industry primarily operates with two payment models: postpaid, where customers pay a monthly or annual bill after using the services, and prepaid, where customers pay or recharge a specified amount upfront before accessing the services.
 
-In the postpaid model, when customers want to switch to another operator, they usually inform the existing operator to terminate the services, and we directly know that this is an instance of churn.
+In the postpaid model, when customers decide to switch to a different operator, they typically notify the current provider to cancel their services, making it a clear case of churn.
 
-However, in the prepaid model, customers who want to switch to another network can simply stop using the services without any notice, and it is hard to know whether someone has actually churned or is simply not using the services temporarily (e.g. someone may be on a trip abroad for a month or two and then intend to resume using the services again).
+In the prepaid model, customers who wish to switch to another network can simply stop using the services without notifying the provider, making it difficult to determine if they have truly churned or if they are just temporarily inactive (for example, a customer might be traveling abroad for a month or two and plan to resume using the services later).
 
-Thus, churn prediction is usually more critical (and non-trivial) for prepaid customers, and the term ‘churn’ should be defined carefully.  Also, prepaid is the most common model in India and southeast Asia, while postpaid is more common in Europe in North America.
+As a result, predicting churn is often more challenging and crucial for prepaid customers, and the definition of "churn" needs to be precise. Additionally, the prepaid model is more prevalent in India and Southeast Asia, while the postpaid model is more common in Europe and North America.
 
-This project is based on the Indian and Southeast Asian market.
+This project focuses on the Indian and Southeast Asian markets.
 
 ## Definitions of Churn 
 
-There are various ways to define churn, such as:
+Churn can be characterized in different ways, such as:
 
-**Revenue-based churn:** Customers who have not utilised any revenue-generating facilities such as mobile internet, outgoing calls, SMS etc. over a given period of time. One could also use aggregate metrics such as ‘customers who have generated less than INR 4 per month in total/average/median revenue’.
+**Revenue-based churn:** Customers who have not used any revenue-generating services, such as mobile internet, outgoing calls, SMS, etc., within a specified period. Alternatively, one could define churn using aggregate metrics, such as "customers who have generated less than INR 4 per month in total, average, or median revenue."
 
-The main shortcoming of this definition is that there are customers who only receive calls/SMSes from their wage-earning counterparts, i.e. they don’t generate revenue but use the services. For example, many users in rural areas only receive calls from their wage-earning siblings in urban areas.
+A key limitation of this definition is that it overlooks customers who primarily receive calls or SMS messages from family members or others, without generating revenue themselves. For instance, many rural users only receive calls from their working relatives in urban areas, without generating any income from the service.
 
-**Usage-based churn:** Customers who have not done any usage, either incoming or outgoing - in terms of calls, internet etc. over a period of time.
+**Usage-based churn:** Customers who have not engaged in any usage, whether incoming or outgoing, such as calls, internet, etc., over a specified period.
 
-A potential shortcoming of this definition is that when the customer has stopped using the services for a while, it may be too late to take any corrective actions to retain them. For e.g., if we define churn based on a ‘two-months zero usage’ period, predicting churn could be useless since by that time the customer would have already switched to another operator.
+A possible drawback of this definition is that if a customer has ceased using the services for an extended period, it may be too late to implement retention measures. For instance, if churn is defined by a "two-month zero usage" period, predicting churn might be ineffective, as the customer may have already switched to another provider by that point.
 
 In this project, we will use the **usage-based** definition to define churn.
 
